@@ -2,8 +2,10 @@
   "name": "chromecasttv",
   "version": "1.0.0",
   "description": "Envia contenido a chromecast",
-  "main": "app.js",
-  "dependencies": {},
+  "main": "./src/server/app.js",
+  "dependencies": {
+    "chromecast-js": "^0.1.7"
+  },
   "devDependencies": {
     "electron-prebuilt": "^0.34.1"
   },
