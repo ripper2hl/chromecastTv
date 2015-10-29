@@ -1,0 +1,8 @@
+*~
+*.respaldo
+*.log
+node_modules/
+src/lib/
+dist/
+coverage/
+.idea/

@@ -1,0 +1,18 @@
+{
+  "name": "chromecasttv",
+  "version": "1.0.0",
+  "description": "Envia contenido a chromecast",
+  "main": "app.js",
+  "dependencies": {},
+  "devDependencies": {
+    "electron-prebuilt": "^0.34.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chromecast"
+  ],
+  "author": "Jesús Perales",
+  "license": "MIT"
+}
