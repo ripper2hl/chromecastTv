@@ -5,6 +5,7 @@
   "main": "./src/server/app.js",
   "dependencies": {
     "chromecast-js": "^0.1.7",
+    "compression": "^1.6.0",
     "express": "^4.13.3",
     "serve-static": "^1.10.0"
   },
