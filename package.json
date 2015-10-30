@@ -4,7 +4,9 @@
   "description": "Envia contenido a chromecast",
   "main": "./src/server/app.js",
   "dependencies": {
-    "chromecast-js": "^0.1.7"
+    "chromecast-js": "^0.1.7",
+    "express": "^4.13.3",
+    "serve-static": "^1.10.0"
   },
   "devDependencies": {
     "electron-prebuilt": "^0.34.1"

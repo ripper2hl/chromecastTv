@@ -2,7 +2,7 @@
 *.respaldo
 *.log
 node_modules/
-src/lib/
+src/client/bower_components/
 dist/
 coverage/
 .idea/

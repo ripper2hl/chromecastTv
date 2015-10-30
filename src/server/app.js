@@ -1,39 +1,12 @@
 var app = require('app');  // Module to control application life.
 var BrowserWindow = require('browser-window');  // Module to create native browser window.
-
+var chromecast = require('./chromecast');
 // Report crashes to our server.
 require('crash-reporter').start();
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 var mainWindow = null;
-
-var chromecastjs = require('chromecast-js');
-var browser = new chromecastjs.Browser();
-
-browser.on('deviceOn', function(device){
-  device.connect()
-  device.on('connected', function(){
-
-    device.play('http://commondatastorage.googleapis.com/gtv-videos-bucket/big_buck_bunny_1080p.mp4', 60, function(){
-        console.log('Playing in your chromecast!')
-    });
-
-    setTimeout(function(){
-        device.pause(function(){
-            console.log('Paused!')
-        });
-    }, 30000);
-
-    setTimeout(function(){
-        device.stop(function(){
-            console.log('Stoped!')
-        });
-    }, 40000);
-
-  })
-});
-
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function() {
@@ -55,6 +28,8 @@ app.on('ready', function() {
 
   // Open the DevTools.
   mainWindow.openDevTools();
+
+  chromecast();
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {

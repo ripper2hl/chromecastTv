@@ -1,0 +1,19 @@
+{
+  "name": "climaWebsite",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular": "~1.4.3",
+    "angular-route": "~1.4.3",
+    "angular-cookies": "~1.4.3",
+    "angular-resource": "~1.4.3",
+    "angular-sanitize": "~1.4.3",
+    "angular-animate": "~1.4.3",
+    "bootstrap": "~3.3.5",
+    "material-design-lite": "~1.0.5",
+    "material-design-icons": "~2.0.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.3",
+    "angular-scenario": "~1.4.3"
+  }
+}
