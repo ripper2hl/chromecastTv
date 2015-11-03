@@ -1,7 +1,6 @@
 var chromecastjs = require('chromecast-js');
 var browser = new chromecastjs.Browser();
 var server = require('./server');
-var quickLocalIp = require('quick-local-ip');
 var path = require('path');
 var os = require('os');
 
