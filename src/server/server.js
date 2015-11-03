@@ -17,7 +17,7 @@ module.exports = function(filePath){
            'Content-Length': stat.size
       });
 
-    var stream = fs.createReadStream(filePath);
+    var stream = fs.createReadStream(filePath, { bufferSize: 64 * 1024 });
     stream.pipe(res);
     stream.on('data',function(chunk){
       console.log('enviando...');
