@@ -29,7 +29,7 @@ app.on('ready', function() {
   // Open the DevTools.
   mainWindow.openDevTools();
 
-  chromecast();
+  //chromecast('/home/perales/test/3.jpg');
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {

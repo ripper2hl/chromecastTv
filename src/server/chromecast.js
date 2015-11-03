@@ -1,21 +1,40 @@
 var chromecastjs = require('chromecast-js');
 var browser = new chromecastjs.Browser();
-var server = require('./express');
+var server = require('./server');
+var quickLocalIp = require('quick-local-ip');
+var path = require('path');
+var os = require('os');
 
-module.exports = function(){
-
+module.exports = function(file){
   browser.on('deviceOn', function(device){
     device.connect();
-
     device.on('connected', function(){
-
-      server();
-
-      device.play('http://192.168.1.95:3000/av.avi', 60, function(){
-          console.log('Playing in your chromecast!')
+      var ip = getIp();
+      server(file);
+      var url = 'http://' + ip + ':3000/video';
+      console.log(url);
+      device.play(url, 0, function(){
+        console.log('Playing in your chromecast!')
       });
 
     })
   });
-
 };
+
+function getIp(){
+  var interfaces = os.networkInterfaces();
+  var addresses;
+  for (var k in interfaces) {
+      for (var k2 in interfaces[k]) {
+          var address = interfaces[k][k2];
+          if (address.family === 'IPv4' && !address.internal) {
+              addresses = address.address;
+              break;
+          }
+      }
+      if(addresses){
+        break;
+      }
+  }
+  return addresses;
+}
