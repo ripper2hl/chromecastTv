@@ -6,6 +6,15 @@ var mime = require('mime-types');
 var app = express();
 app.use(compression());
 
+/**
+ * Levanta un servidor de express
+ * al vuelo para servir un archivo
+ * local mediante stream en la ruta
+ * http://localhost:3000/video
+ * @param filePath ruta absoluta al archivo
+ * @author Jesus Perales.
+ * 04/11/2015
+ */
 module.exports = function(filePath){
   fileMime = mime.lookup(filePath);
   console.log(fileMime);

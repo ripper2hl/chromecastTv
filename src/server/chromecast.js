@@ -4,7 +4,16 @@ var server = require('./server');
 var path = require('path');
 var os = require('os');
 
-module.exports = function(file){
+/**
+ * Busca un chromecast en la red
+ * y se conecta con el para enviar
+ * un archivo local.
+ * @param file ruta absoluta al archivo.
+ * @author Jesus Perales.
+ * 04/11/2015
+ */
+function play(file){
+  console.log(file);
   browser.on('deviceOn', function(device){
     device.connect();
     device.on('connected', function(){
@@ -18,8 +27,15 @@ module.exports = function(file){
 
     })
   });
-};
+}
 
+/**
+ * Obtiene la primera ip que se encuentra
+ * en la maquina local.
+ * @returns ip de la maquina.
+ * @author Jesus Perales.
+ * 04/11/2015
+ */
 function getIp(){
   var interfaces = os.networkInterfaces();
   var addresses;
@@ -37,3 +53,5 @@ function getIp(){
   }
   return addresses;
 }
+
+module.exports = play;

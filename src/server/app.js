@@ -1,3 +1,9 @@
+/**
+ * Inicializa la aplicacion en electron.
+ * @author Jesus Perales.
+ * 04/11/2015
+ */
+
 var app = require('app');  // Module to control application life.
 var BrowserWindow = require('browser-window');  // Module to create native browser window.
 var chromecast = require('./chromecast');
