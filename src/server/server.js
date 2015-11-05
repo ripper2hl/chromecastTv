@@ -6,7 +6,7 @@ var mime = require('mime-types');
 var transcoder = require('stream-transcoder');
 var app = express();
 app.use(compression());
-const = MP4_MIME = 'video/mp4';
+const MP4_MIME = 'video/mp4';
 /**
  * Levanta un servidor de express
  * al vuelo para servir un archivo
@@ -35,8 +35,9 @@ module.exports = function(filePath){
     }else{
       // TODO: Transcode debe ir aqui
       var trans = new transcoder(filePath)
+      .maxSize(800, 600)
       .videoCodec('h264')
-      .format('mp4')
+      .format('matroska')
       .custom('strict', 'experimental')
       .on('finish', function() {
         debug('finished transcoding');
