@@ -9,10 +9,14 @@
     "express": "^4.13.3",
     "mime-types": "^2.1.7",
     "serve-static": "^1.10.0",
-     "stream-transcoder": "0.0.5"
+    "stream-transcoder": "0.0.5"
   },
   "devDependencies": {
-    "electron-prebuilt": "^0.34.1"
+    "electron-prebuilt": "^0.34.1",
+    "gulp": "^3.9.0",
+    "gulp-angular-filesort": "^1.1.1",
+    "gulp-inject": "^3.0.0",
+    "main-bower-files": "^2.9.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

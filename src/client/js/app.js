@@ -15,7 +15,7 @@
     return false;
   },false);
 
-  var app = angular.module('App',[]);
+  var app = angular.module('chromecastTv',[]);
 
   app.controller('mainController',['$scope', function($scope){
 
